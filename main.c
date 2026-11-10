@@ -68,23 +68,44 @@ int main(void){
         }
     }while (krat == 0 || ne_krat == 0);
     
-    mass_print('A', na, A);
-    mass_print('B', nb, B);
-    mass_print('C', nc, C);
-    fprintf(out_file, "vvedeno krat: %d", krat);
+    fprintf(out_file, "vvedeno:");
+    mass_print(out_file, 'A', na, A);
+    mass_print(out_file, 'B', nb, B);
+    mass_print(out_file, 'C', nc, C);
+    fprintf(out_file, "krat: %d", krat);
     fprintf(out_file, "ne_krat", ne_krat);
     
     int* new_A;
-    mass_vvod_poick(na, &new_A, &A, krat, ne_krat);
+    int new_na = 0;
+    mass_vvod_poick(%new_na, &new_A, na, &A, krat, ne_krat);
     
-    int* new_A;
-    mass_vvod_poick(na, &new_A, &A, krat, ne_krat);
+    int* new_B;
+    int new_nb = 0;
+    mass_vvod_poick(%new_nb, &new_B, nb, &B, krat, ne_krat);
     
-    int* new_A;
-    mass_vvod_poick(na, &new_A, &A, krat, ne_krat);
+    int* new_C;
+    int new_nc = 0;
+    mass_vvod_poick(%new_nc, &new_C, nc, &C, krat, ne_krat);
     
     fprintf(out_file, "Resul:");
     
+    if (new_na != 0){
+        mass_print(out_file, 'A', new_na, new_A);
+    }else{
+        fprintf(out_file, "pusto v A");
+    }
+    
+    if (new_nb != 0){
+        mass_print(out_file, 'B', new_nb, new_B);
+    }else{
+        fprintf(out_file, "pusto v B");
+    }
+    
+    if (new_nc != 0){
+        mass_print(out_file, 'C', new_nc, new_C);
+    }else{
+        fprintf(out_file, "pusto v C");
+    }
     
     free(new_A);
     free(new_B);
