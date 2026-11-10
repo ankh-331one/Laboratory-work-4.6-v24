@@ -21,4 +21,36 @@
 номеров элементов, удовлетворяющих условию, использовать
 подпрограмму.
 */
+#include <stdio.h>
+#include <malloc.h>
+#include <locale.h>
+#include "p_function.h"
+
+#define L_DIAPAZON_MASSIV 1
+#define R_DIAPAZON_MASSIV 99
+
+int main(void){
+    setlocale(0,"");
+    setlocale(LC_NUMERIC, "C");
+    
+    FILE* in_file = fopen("input.txt", "r");
+    FILE* out_file = fopen("output.txt", "a");
+    
+    fprintf(out_file, "4.6 запуск %s %s", __DATE__, __TIME__);
+    fprintf(out_file, "\n-----------------------------------------------------------------\n");
+    
+    int na = input('A', L_DIAPAZON_MASSIV, R_DIAPAZON_MASSIV);
+    int* A;
+    mass_input(in_file, na, &A);
+    
+    int nb = input('B', L_DIAPAZON_MASSIV, R_DIAPAZON_MASSIV);
+    int* A;
+    mass_input(in_file, na, &A);
+    
+    int na = input('A', L_DIAPAZON_MASSIV, R_DIAPAZON_MASSIV);
+    int* A;
+    mass_input(in_file, na, &A);
+    
+    return 0;
+}
 
