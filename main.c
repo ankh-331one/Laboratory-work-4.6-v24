@@ -74,8 +74,21 @@ int main(void){
     fprintf(out_file, "vvedeno krat: %d", krat);
     fprintf(out_file, "ne_krat", ne_krat);
     
+    int* new_A;
+    mass_vvod_poick(na, &new_A, &A, krat, ne_krat);
+    
+    int* new_A;
+    mass_vvod_poick(na, &new_A, &A, krat, ne_krat);
+    
+    int* new_A;
+    mass_vvod_poick(na, &new_A, &A, krat, ne_krat);
+    
+    fprintf(out_file, "Resul:");
     
     
+    free(new_A);
+    free(new_B);
+    free(new_C);
     free(A);
     free(B);
     free(C);
