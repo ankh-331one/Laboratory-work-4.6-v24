@@ -44,12 +44,22 @@ int main(void){
     mass_input(in_file, na, &A);
     
     int nb = input('B', L_DIAPAZON_MASSIV, R_DIAPAZON_MASSIV);
-    int* A;
-    mass_input(in_file, na, &A);
+    int* B;
+    mass_input(in_file, nb, &B);
     
-    int na = input('A', L_DIAPAZON_MASSIV, R_DIAPAZON_MASSIV);
-    int* A;
-    mass_input(in_file, na, &A);
+    int nc = input('C', L_DIAPAZON_MASSIV, R_DIAPAZON_MASSIV);
+    int* c;
+    mass_input(in_file, nc, &C);
+    
+    int krat, ne_krat;
+    do{
+        printf("vvedite krat: ");
+        scanf("%d", &krat);
+        
+        printf("vvedite ne_krat: ");
+        scanf("%d", &ne_krat);
+        
+        if (krat == 0 || ne_krat == 0)
     
     return 0;
 }
