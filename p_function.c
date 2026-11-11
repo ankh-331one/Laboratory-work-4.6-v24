@@ -33,4 +33,14 @@ void mass_print(FILE* output, char a, int n, int* X){
     fprintf(output, " ]");
     return ;
 }
-void mass_vvod_poick(int new_n, int* *new_X, n, int* *X, int kr, int ne_kr);
+void mass_vvod_poick(int *new_n, int* *new_X, int n, int* *X, int kr, int ne_kr){
+    (*new_X) = (int*)malloc((*new_n + 1) * sizeof(int));
+    for (int i = 0, i < n; i++){
+        if ((*X)[i] % kr == 0 && (*X)[i] % ne_kr != 0){
+            (*new_X)[(*new_n)] = i;
+            (*new_n) += 1;
+            (*new_X) = realloc(*new_X, ((*new_n)+1)*sizeof(int));
+        }
+    }
+    return ;
+}
