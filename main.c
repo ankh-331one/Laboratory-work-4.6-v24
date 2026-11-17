@@ -32,81 +32,81 @@
 int main(void){
     setlocale(0,"");
     setlocale(LC_NUMERIC, "C");
-    
+
     FILE* out_file = fopen("output.txt", "a");
-    fprintf(out_file, "4.6 запуск %s %s", __DATE__, __TIME__);
+    fprintf(out_file, "\n4.6 запуск %s %s", __DATE__, __TIME__);
     fprintf(out_file, "\n-----------------------------------------------------------------\n");
-    
+
     FILE* in_A = fopen("input_A.txt", "r");
     int na = input('A', L_DIAPAZON_MASSIV, R_DIAPAZON_MASSIV);
     int* A;
     mass_input(in_A, na, &A);
     fclose(in_A);
-    
+
     FILE* in_B = fopen("input_B.txt", "r");
     int nb = input('B', L_DIAPAZON_MASSIV, R_DIAPAZON_MASSIV);
     int* B;
     mass_input(in_B, nb, &B);
     fclose(in_B);
-    
+
     FILE* in_C = fopen("input_C.txt", "r");
     int nc = input('C', L_DIAPAZON_MASSIV, R_DIAPAZON_MASSIV);
     int* C;
     mass_input(in_C, nc, &C);
     fclose(in_C);
-    
+
     int krat, ne_krat;
     do{
-        printf("vvedite krat: ");
+        printf("\nvvedite krat: ");
         scanf("%d", &krat);
-        
-        printf("vvedite ne_krat: ");
+
+        printf("\nvvedite ne_krat: ");
         scanf("%d", &ne_krat);
-        
+
         if (krat == 0 || ne_krat == 0){
-            printf("error");
+            printf("\nerror\n");
         }
     }while (krat == 0 || ne_krat == 0);
-    
-    fprintf(out_file, "vvedeno:");
+
+    fprintf(out_file, "\nvvedeno:");
     mass_print(out_file, 'A', na, A);
     mass_print(out_file, 'B', nb, B);
     mass_print(out_file, 'C', nc, C);
-    fprintf(out_file, "krat: %d", krat);
-    fprintf(out_file, "ne_krat", ne_krat);
-    
+    fprintf(out_file, "\nkrat: %d", krat);
+    fprintf(out_file, "\nne_krat: %d", ne_krat);
+
     int* new_A;
     int new_na = 0;
-    mass_vvod_poick(%new_na, &new_A, na, &A, krat, ne_krat);
-    
+    mass_vvod_poick(&new_na, &new_A, na, &A, krat, ne_krat);
+
     int* new_B;
     int new_nb = 0;
-    mass_vvod_poick(%new_nb, &new_B, nb, &B, krat, ne_krat);
-    
+    mass_vvod_poick(&new_nb, &new_B, nb, &B, krat, ne_krat);
+
     int* new_C;
     int new_nc = 0;
-    mass_vvod_poick(%new_nc, &new_C, nc, &C, krat, ne_krat);
-    
-    fprintf(out_file, "Resul:");
-    
+    mass_vvod_poick(&new_nc, &new_C, nc, &C, krat, ne_krat);
+
+    fprintf(out_file, "\nResul:");
+
     if (new_na != 0){
         mass_print(out_file, 'A', new_na, new_A);
     }else{
-        fprintf(out_file, "pusto v A");
+        fprintf(out_file, "\npusto v A");
     }
-    
+
     if (new_nb != 0){
         mass_print(out_file, 'B', new_nb, new_B);
     }else{
-        fprintf(out_file, "pusto v B");
+        fprintf(out_file, "\npusto v B");
     }
-    
+
     if (new_nc != 0){
         mass_print(out_file, 'C', new_nc, new_C);
     }else{
-        fprintf(out_file, "pusto v C");
+        fprintf(out_file, "\npusto v C");
     }
-    
+
     free(new_A);
     free(new_B);
     free(new_C);
@@ -116,4 +116,3 @@ int main(void){
     fclose(out_file);
     return 0;
 }
-
